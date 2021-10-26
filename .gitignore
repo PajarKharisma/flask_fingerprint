@@ -1,4 +1,4 @@
 .env
-dataset/DB1A/*
-dataset/Partial_DB1A/*
+dataset/DB1A/*.tif
+dataset/Partial_DB1A/*.tif
 dataset/temp/*.tif

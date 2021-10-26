@@ -1,18 +1,13 @@
-from flask import Flask, app, render_template
+from flask import Flask
+import os
+import sys
+
 app = Flask(__name__)
+app.secret_key = os.urandom(24)
 
-@app.route('/')
-def hello_world():
-    return 'Hello World'
+from api import *
 
-@app.route('/biodata')
-def biodata():
-    bio = 'nama : Pajar <br> alamat : Bandarlampung'
-    return bio
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=True, port=80)
 
-@app.route('/about')
-def about():
-    return render_template('index.html')
-
-if __name__ == '__main__':
-    app.run()
+# os.system("clear-cache.sh")

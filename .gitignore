@@ -1,0 +1,4 @@
+.env
+dataset/DB1A/*
+dataset/Partial_DB1A/*
+dataset/temp/*.tif

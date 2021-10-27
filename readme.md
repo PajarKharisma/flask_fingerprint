@@ -23,5 +23,6 @@
 - Anda dapat menggunakan layanan `https://www.browserling.com/tools/image-to-base64` untuk mengkonversi gambar menjadi bentuk base64.  
 - Perhatikan gambar berikut dalam pengoperasion postman.  
 <img src="img/postman.png"><br>
+- Jika sudah sesuai, maka tekan tombol "send".    
 - Berikut merupakan contoh format request.  
-<img src="img/request-example.png"><br>
+<img src="img/request-example.jpg"><br>

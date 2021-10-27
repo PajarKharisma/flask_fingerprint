@@ -18,16 +18,15 @@ def index():
         return render_template('index.html')
     else:
         file_util.empty_dir(Path.temp)
-        content = request.json
-        index_person = content['index_person']
-        imgdata = base64.b64decode(content['img'])
-        filename = os.path.join(Path.temp, '{}.tif'.format(str(uuid.uuid4().hex)))
-        with open(filename, 'wb') as f:
-            f.write(imgdata)
+        file = request.files['input_img']
+        index_person = request.form['index_person']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(Path.temp, filename))
+        img = os.path.join(Path.temp, filename)
         pred_result = "Not Match"
         for i in range(1,9):
             final_comp_path = Path.base_comp_path + str(index_person) + str('_') + str(i) + str('.tif')
-            flag, array_data = heuristic.calculateMatching(filename, final_comp_path,1, 0)
+            flag, array_data = heuristic.calculateMatching(img, final_comp_path,1, 0)
             if flag == 0:
                 pred_result = "Match"
                 break

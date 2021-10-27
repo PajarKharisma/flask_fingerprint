@@ -3,9 +3,8 @@ import sys
 import uuid
 import base64
 
-from flask import render_template, request, redirect, Response, flash, url_for, send_file, make_response, jsonify
+from flask import request, make_response, jsonify
 from werkzeug.utils import secure_filename
-from flask import Blueprint
 from config.path import Path
 
 import core.heuristic as heuristic
@@ -35,7 +34,6 @@ def api_deteksi_raw():
     response = make_response(
         jsonify(
                 {
-                    "id" : 1,
                     "result": pred_result
                 }
             ),

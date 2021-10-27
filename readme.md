@@ -9,7 +9,7 @@
 
 `https://www.browserling.com/tools/image-to-base64`
 
-### Cara Setup  
+## Panduan Setup  
 - Download program ini.  
 - Disarankan memuat virtual environment terlebih dahulu dengan cara berikut : `virtualenv .env` untuk python native dan `conda create -n <nama virtual env>` untuk anaconda.  
 - Masuk ke virtual environment dengan cara berikut : `.env\Scripts\activate.bat` untuk python native dan `conda activate <nama virtual env>` untuk anaconda.  
@@ -17,7 +17,7 @@
 - Aplikasi dapat dijalankan dengan perintah `run.bat`.  
   
   
-## Cara mengakses API  
+## Panduan mengakses API  
 - API dapat diakses menggunakan aplikasi postman yang dapat diunduh pada link berikut `https://www.postman.com/downloads/`.  
 - Request akan dikirimkan dengan data berformat json sehingga gambar input terlebih dahulu harus dikonversi menjadi bentuk base64.  
 - Anda dapat menggunakan layanan `https://www.browserling.com/tools/image-to-base64` untuk mengkonversi gambar menjadi bentuk base64.  

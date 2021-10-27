@@ -41,3 +41,8 @@ def index():
             )
         response.headers["Content-Type"] = "application/json"
         return response
+
+@deteksi.route('/about', methods=['GET'])
+def about():
+    if request.method == 'GET':
+        return render_template('about.html')

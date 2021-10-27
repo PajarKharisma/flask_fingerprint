@@ -28,8 +28,7 @@ def api_deteksi_raw():
         if flag == 0:
             pred_result = "Match"
             break
-
-
+        
     response = make_response(
         jsonify(
                 {

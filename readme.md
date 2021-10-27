@@ -21,7 +21,7 @@
 - API dapat diakses menggunakan aplikasi postman yang dapat diunduh pada link berikut `https://www.postman.com/downloads/`.  
 - Request akan dikirimkan dengan data berformat json sehingga gambar input terlebih dahulu harus dikonversi menjadi bentuk base64.  
 - Anda dapat menggunakan layanan `https://www.browserling.com/tools/image-to-base64` untuk mengkonversi gambar menjadi bentuk base64.  
-- Perhatikan gambar berikut dalam pengoperasion postman.  
+- Perhatikan kotak berwarna merah, biru, dan kuning pada gambar berikut dalam pengoperasion postman.  
 <img src="img/postman.png"><br>
 - Jika sudah sesuai, maka tekan tombol "send".    
 - Berikut merupakan contoh format request.  

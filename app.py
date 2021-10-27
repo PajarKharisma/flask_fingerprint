@@ -5,6 +5,7 @@ import sys
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
+from views import *
 from api import *
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@
 {% block content %}
 <div class="card">
     <div class="card-header">
-        Dashboard
+        Versi 2.0
     </div>
     <div class="card-body">
         <form action="javascript:void(0)" id="form-upload" method="POST" enctype="multipart/form-data">
@@ -47,7 +47,7 @@
 
         $.ajax({
             type:'POST',
-            url: "/",
+            url: "/v2",
             data: formData,
             contentType: false,
             processData: false,

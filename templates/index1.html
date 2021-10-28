@@ -1,0 +1,86 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        Versi 1.0
+    </div>
+    <div class="card-body">
+        <form action="javascript:void(0)" id="form-upload" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="row col-sm-12 text-center">
+                    <label for="input_img">Input Gambar</label>
+                    <input type="file" id="input_img" name="input_img" class="dropify" data-allowed-file-extensions="tif png jpg jpeg bmp" data-max-file-size="5M" />
+                </div>
+            </div>
+            <br>
+            
+            <div class="form-group">
+                <div class="row col-sm-6">
+                    <input type="text" class="form-control" placeholder="Index Person" name="index_person" id="index_person">
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <div class="row col-sm-12 text-right">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+    $(document).ready(function () {
+        $('.dropify').dropify();
+    });
+
+    $('#form-upload').on('submit',function(e) {
+        e.preventDefault();
+        let formData = new FormData(this);
+
+        $.ajax({
+            type:'POST',
+            url: "/v1",
+            data: formData,
+            contentType: false,
+            processData: false,
+            beforeSend: function () {
+                Swal.fire({
+                    icon : 'info',
+                    text: 'Harap Tunggu..'
+                });
+                Swal.showLoading();
+            },
+            complete: function () {
+            },
+            success: (response) => {
+                data = response;
+                if (data.result == 'Match') {
+                    Swal.fire({
+                        icon: 'success',
+                        text: 'Data cocok dengan score ' + data.score
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: 'Data tidak cocok dengan score ' + data.score
+                    });
+                }
+            },
+            error: function(response){
+                Swal.fire({
+                    icon: 'error',
+                    text: 'Berkas gagal diunggah. Harap periksa koneksi internet anda atau hal lain.'
+                });
+            }
+        });
+    });
+</script>
+{% endblock %}
